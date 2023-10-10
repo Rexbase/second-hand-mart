@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Order Details</h1>
+    <p>Order ID: {{ order_id }}</p>
+    <p>Order Status: {{ order_status }}</p>
+    <p>Customer Name: {{ customer_name }}</p>
+    <p>Order Date: {{ order_date }}</p>
+    <p>Shipping Address: {{ shipping_address }}</p>
+    <h2>Order Items</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in order_items %}
+            <tr>
+                <td>{{ item.product_name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2>Order Total: {{ order_total }}</h2>
+    <h2>Update Order Status</h2>
+    <form action="/update_order_status" method="POST">
+        <input type="hidden" name="order_id" value="{{ order_id }}">
+        <select name="status">
+            <option value="pending">Pending</option>
+            <option value="shipped">Shipped</option>
+            <option value="delivered">Delivered</option>
+        </select>
+        <input type="submit" value="Update Status">
+    </form>
+
+    <!--JavaScript-->
+<script src="main.js"></script>
+<script src="cart.js"></script>
+<script src="payment.js"></script>
+</body>
+</html>

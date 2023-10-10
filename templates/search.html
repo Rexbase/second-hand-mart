@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Search</h1>
+    <form method="POST" action="/search">
+        <label for="keyword">Keyword:</label>
+        <input type="text" name="keyword" id="keyword">
+
+        <label for="category">Category:</label>
+        <select name="category" id="category">
+            <option value="">All</option>
+            {% for category in categories %}
+                <option value="{{ category[0] }}">{{ category[1] }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="min_price">Min Price:</label>
+        <input type="number" name="min_price" id="min_price">
+
+        <label for="max_price">Max Price:</label>
+        <input type="number" name="max_price" id="max_price">
+
+        <input type="submit" value="Search">
+    </form>
+
+    <!--JavaScript-->
+<script src="main.js"></script>
+<script src="cart.js"></script>
+<script src="payment.js"></script>
+</body>
+</html>

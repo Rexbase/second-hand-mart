@@ -1,0 +1,150 @@
+/* styles.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .header h1 {
+    margin: 0;
+  }
+  
+  /* Navigation */
+  .navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Home page */
+  .home {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .home h2 {
+    margin-bottom: 20px;
+  }
+  
+  .product {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+  }
+  
+  .product img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .product h3 {
+    margin: 10px 0;
+  }
+  
+  .product p {
+    margin: 0;
+  }
+  
+  /* Cart page */
+  .cart {
+    margin-top: 40px;
+  }
+  
+  .cart table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .cart th, .cart td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .cart th {
+    background-color: #f7f7f7;
+  }
+  
+  .cart .total {
+    text-align: right;
+  }
+  
+  .cart .grand-total {
+    font-weight: bold;
+  }
+  
+  /* Checkout page */
+  .checkout {
+    margin-top: 40px;
+  }
+  
+  .checkout form {
+    width: 50%;
+    margin: 0 auto;
+  }
+  
+  .checkout label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .checkout input[type="text"],
+  .checkout input[type="email"],
+  .checkout input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .checkout input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Other styles... */
+  

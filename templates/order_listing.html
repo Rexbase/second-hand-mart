@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Listing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Order Listing</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Order Date</th>
+                <th>Customer Name</th>
+                <th>Order Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.order_id }}</td>
+                <td>{{ order.order_date }}</td>
+                <td>{{ order.customer_name }}</td>
+                <td>{{ order.order_status }}</td>
+                <td><a href="/order/{{ order.order_id }}">View Details</a></td>
+                <li>{{ order.order_id }} - Status: {{ order.status }}</li>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!--JavaScript-->
+<script src="main.js"></script>
+<script src="cart.js"></script>
+<script src="payment.js"></script>
+</body>
+</html>

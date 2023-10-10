@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Details</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Product Details</h1>
+    <h2>{{ product['name'] }}</h2>
+    <p>Price: ${{ product['price'] }}</p>
+
+    <form method="post" action="{{ url_for('view_product', product_id=product['id']) }}">
+        <label for="price">Proposed Price:</label>
+        <input type="number" name="price" step="0.01" required>
+
+        <label for="offer">Offer:</label>
+        <input type="number" name="offer" step="0.01" required>
+
+        <input type="submit" value="Negotiate">
+    </form>
+
+    {% if negotiated_price %}
+        <p class="negotiated-price">Negotiated Price: ${{ negotiated_price }}</p>
+    {% endif %}
+
+    <!--JavaScript-->
+<script src="main.js"></script>
+<script src="cart.js"></script>
+<script src="payment.js"></script>
+</body>
+</html>

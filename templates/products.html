@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Products</h1>
+    <ul>
+    {% for product in products %}
+        <li>
+            <a href="{{ url_for('view_product', product_id=product['id']) }}">{{ product['name'] }}</a>
+            <span class="price">{{ product['price'] }}</span>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <!--JavaScript-->
+<script src="main.js"></script>
+<script src="cart.js"></script>
+<script src="payment.js"></script>
+</body>
+</html>
