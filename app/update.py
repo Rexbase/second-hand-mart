@@ -1,11 +1,30 @@
 import logging
 import subprocess
-import shutil
 import os
+import bcrypt
+import psycopg2
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Connect to the PostgreSQL database
+conn = psycopg2.connect(
+    dbname='shm',
+    user='mac',
+    password='Mart7990',
+    host='localhost',
+    port='5433'
+)
+
+# Helper function for encryption
+def encrypt_data(data):
+    # Add encryption logic here
+    return data
+
+# Helper function for password hashing
+def hash_password(password):
+    return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
 # Backup the database
 def backup_database():
@@ -19,7 +38,7 @@ def backup_database():
 
         logger.info("Database backup created successfully.")
     except Exception as e:
-        handle_error("Failed to create database backup: " + str(e))
+        logger.error("Failed to create database backup: " + str(e))
 
 # Error handling and logging
 def handle_error(error_message):
